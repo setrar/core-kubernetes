@@ -14,5 +14,5 @@ Book studies [Core Kubernetes](https://www.manning.com/books/core-kubernetes)
 
 # References
 
-- [ ] [Source code for Manning Publishing: Core Kubernetes]()
+- [ ] [Source code for Manning Publishing: Core Kubernetes](core-kubernetes @ fef661b)
 - [ ] [JayUnit:100: - A collection of Kubernetes examples that I use ](https://github.com/jayunit100/k8sprototypes)
