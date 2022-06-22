@@ -8,7 +8,7 @@ Book studies [Core Kubernetes](https://www.manning.com/books/core-kubernetes)
 
 | Chapter | Description |
 |---------|-------------|
-| [Chapter:heavy_minus_sign::one:](chapter-1)   | |
+| [Chapter:heavy_minus_sign::zero::seven:](chapter-07)   | |
 
 # References
 
