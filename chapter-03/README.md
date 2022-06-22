@@ -2,7 +2,7 @@
 
 ## Create a cluster
 
-<img src="../images/kind-return.png" width=100 > </img>
+<img src="../images/kind-return.png" width=500 > </img>
 
 
 - [ ] [http://mng.bz/8M12](https://github.com/kubernetes/kubernetes/blob/master/pkg/volume/util/subpath/subpath_linux.go#L93)
