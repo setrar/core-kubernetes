@@ -1,0 +1,3 @@
+[submodule "core-kubernetes"]
+	path = core-kubernetes
+	url = https://github.com/lionkube/core-kubernetes
