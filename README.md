@@ -4,7 +4,7 @@ Book studies - Core Kubernetes
 
 [Install first :point_left:](install)
 
-Book studies [Core Kubernetes](https://www.manning.com/books/terraform-in-action)
+Book studies [Core Kubernetes](https://www.manning.com/books/core-kubernetes)
 
 | Chapter | Listing | Description |
 |---------|---------|-------------|
