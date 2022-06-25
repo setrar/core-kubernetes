@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: core-k8s
+  labels:
+    role: just-an-example
+    app: my-example-app
+    organization: friends-of-manning
+    creator: jay
+spec:
+  containers:
+    - name: any-old-name-will-do
+      image: docker.io/busybox:latest
+      command: ['sleep','10000']
+      ports:
+        - name: webapp-port
+          containerPort: 80
+          protocol: TCP
