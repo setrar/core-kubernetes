@@ -30,7 +30,7 @@ CURRENT   NAME                         CLUSTER                      AUTHINFO    
 docker container exec --interactive --tty kind-control-plane /bin/bash
 ````
 
-* fecth how many processes before creating pod
+* fetch how many processes before creating pod
 
 ```
 root@kind-control-plane:/# ps -ax | wc -l
