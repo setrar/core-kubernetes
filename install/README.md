@@ -1,4 +1,4 @@
 # Install
 
 
-<img src="../images/kind-kind.png" width=500 > </img>
+<img src="../images/kind-kind.png" width=900 > </img>
