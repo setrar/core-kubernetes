@@ -25,4 +25,5 @@ kind delete cluster --name=kind
 kind create cluster
 ```
 > Returns
+
 <img src="../images/kind-kind.png" width=900 > </img>
