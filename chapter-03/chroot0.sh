@@ -14,8 +14,8 @@ cp -r /lib/ /home/namespace/box
 mount -t proc proc /home/namespace/box/proc 
 
 # uncomment to add data volume
-# mkdir /home/namespace/box/data
-# mount --bind /tmp/ /home/namespace/box/data
+#mkdir /home/namespace/box/data
+#mount --bind /tmp/ /home/namespace/box/data
 
 # uncomment to protect PIDs
 #unshare --pid --fork --mount-proc=/home/namespace/box/proc \
