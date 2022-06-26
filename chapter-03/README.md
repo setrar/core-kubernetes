@@ -63,6 +63,15 @@ root@kind-control-plane:/# ps -ax | wc -l
 CTR_ID=`docker container ls --quiet`; docker container cp chroot0.sh ${CTR_ID}:/home/chroot0.sh
 ```
 
+### Proper `chroot` Exit
+
+```
+umount /home/namespace/box/proc
+```
+```
+umount /home/namespace/box/data
+```
+
 # References
 
 - [ ] [http://mng.bz/8M12](https://github.com/kubernetes/kubernetes/blob/master/pkg/volume/util/subpath/subpath_linux.go#L93)
