@@ -4,6 +4,18 @@
 
 * Install `Docker Desktop`
 
+```
+wget https://desktop.docker.com/mac/main/amd64/Docker.dmg
+```
+
+```
+hdiutil attach Docker.dmg
+```
+
+```
+cp -R /Volumes/Docker/Docker.app /Applications
+```
+
 * Install `kubectl`
 ```
 brew install kubectl
