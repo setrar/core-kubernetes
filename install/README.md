@@ -9,11 +9,7 @@ ARCH=amd64 # ARCH=arm64
 ```
 
 ```
-wget https://desktop.docker.com/mac/main/${ARCH}/Docker.dmg
-```
-
-```
-hdiutil attach Docker.dmg
+wget https://desktop.docker.com/mac/main/${ARCH}/Docker.dmg ; hdiutil attach Docker.dmg
 ```
 
 ```
@@ -21,7 +17,7 @@ cp -R /Volumes/Docker/Docker.app /Applications
 ```
 
 ```
-hdiutil detach /Volumes/Docker
+hdiutil detach /Volumes/Docker ; rm Docker.dmg
 ```
 
 * Install `kubectl`
