@@ -5,7 +5,11 @@
 * Install `Docker Desktop`
 
 ```
-wget https://desktop.docker.com/mac/main/amd64/Docker.dmg
+ARCH=amd64 # ARCH=arm64
+```
+
+```
+wget https://desktop.docker.com/mac/main/${ARCH}/Docker.dmg
 ```
 
 ```
@@ -14,6 +18,10 @@ hdiutil attach Docker.dmg
 
 ```
 cp -R /Volumes/Docker/Docker.app /Applications
+```
+
+```
+hdiutil detach /Volumes/Docker
 ```
 
 * Install `kubectl`
