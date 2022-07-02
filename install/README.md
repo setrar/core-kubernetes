@@ -71,3 +71,7 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 ```
 docker container exec --interactive --tty kind-control-plane /bin/bash
 ```
+
+# References
+
+- [ ] [zsh comment character](https://apple.stackexchange.com/questions/405246/zsh-comment-character)
