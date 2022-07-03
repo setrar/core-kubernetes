@@ -5,6 +5,10 @@
 * Install `Docker Desktop`
 
 ```
+MACH=$(uname -m) ; [[ $MACH = "x86_64" ]] && ARCH="amd64" || ARCH="aarch64"
+```
+
+```
 ARCH=amd64 # ARCH=arm64
 ```
 
