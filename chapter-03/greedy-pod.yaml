@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: core-k8s-greedy
+spec:
+  containers:
+    - name: any-old-name-will-do
+      image: docker.io/busybox:latest
+      command: ['sleep','10000']
+      resources:
+        limits:
+          memory: "200Mi"
+        requests:
+          memory: "100Mi"

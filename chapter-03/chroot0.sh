@@ -23,7 +23,9 @@ cp -r /lib/ /home/namespace/box
 mkdir /home/namespace/box/proc
 mount -t proc proc /home/namespace/box/proc
 
-# uncomment to protect PIDs, network, ...
+echo current PID: $$
+
+# uncomment to protect PIDs
 unshare --pid --net --fork --mount-proc=/home/namespace/box/proc \
 chroot /home/namespace/box /bin/bash
 
