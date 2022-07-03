@@ -79,3 +79,5 @@ docker container exec --interactive --tty kind-control-plane /bin/bash
 ```
 echo "setopt interactivecomments" >> ${HOME}/.zshrc
 ```
+
+- [ ] [Ternary operator (?:) in Bash](https://stackoverflow.com/questions/3953645/ternary-operator-in-bash)
