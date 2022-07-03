@@ -125,3 +125,4 @@ k exec --stdin --tty core-k8s -- ip addr
 - [ ] [http://mng.bz/8M12](https://github.com/kubernetes/kubernetes/blob/master/pkg/volume/util/subpath/subpath_linux.go#L93)
 - [ ] [chroot: failed to run command ‘/bin/bash’: No such file or directory](https://unix.stackexchange.com/questions/128046/chroot-failed-to-run-command-bin-bash-no-such-file-or-directory)
 - [ ] [ArchLinux - chroot](https://wiki.archlinux.org/title/chroot)
+- [ ] [Control Group v2](https://www.kernel.org/doc/html/v5.10/admin-guide/cgroup-v2.html)
