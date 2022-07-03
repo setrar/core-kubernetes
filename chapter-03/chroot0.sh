@@ -15,6 +15,12 @@ cp -v /bin/ip /home/namespace/box/bin
 mkdir /home/namespace/box/lib
 cp -r /lib/ /home/namespace/box
 
+ARCH=$(uname --machine)
+if [ "${ARCH}" == "x86_64" ]; then
+  mkdir /home/namespace/box/lib64
+  cp -r /lib64/ /home/namespace/box
+fi
+
 # Uncomment to populate data volume
 #mkdir /home/namespace/box/data
 #mount --bind /tmp/ /home/namespace/box/data

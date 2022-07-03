@@ -4,6 +4,26 @@
 
 * Install `Docker Desktop`
 
+```
+MACH=$(uname -m) ; [[ $MACH = "x86_64" ]] && ARCH="amd64" || ARCH="aarch64"
+```
+
+```
+ARCH=amd64 # ARCH=arm64
+```
+
+```
+wget https://desktop.docker.com/mac/main/${ARCH}/Docker.dmg ; hdiutil attach Docker.dmg
+```
+
+```
+cp -R /Volumes/Docker/Docker.app /Applications
+```
+
+```
+hdiutil detach /Volumes/Docker ; rm Docker.dmg
+```
+
 * Install `kubectl`
 ```
 brew install kubectl
@@ -51,3 +71,13 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 ```
 docker container exec --interactive --tty kind-control-plane /bin/bash
 ```
+
+# References
+
+- [ ] [zsh comment character](https://apple.stackexchange.com/questions/405246/zsh-comment-character)
+
+```
+echo "setopt interactivecomments" >> ${HOME}/.zshrc
+```
+
+- [ ] [Ternary operator (?:) in Bash](https://stackoverflow.com/questions/3953645/ternary-operator-in-bash)
