@@ -207,5 +207,5 @@ iptables-save | grep 10.244.0
 - [ ] [ArchLinux - chroot](https://wiki.archlinux.org/title/chroot)
 - [ ] [Control Group v2](https://www.kernel.org/doc/html/v5.10/admin-guide/cgroup-v2.html)
 - [ ] [REJECT vs DROP when using iptables](https://serverfault.com/questions/157375/reject-vs-drop-when-using-iptables)
-- [ ] [Forum](https://livebook.manning.com/book/core-kubernetes/chapter-3/#:~:text=from%20this%20book%27s-,other,-MEAP%20versions%20by)
+- [ ] [Manning - Forum](https://livebook.manning.com/book/core-kubernetes/chapter-3/#:~:text=from%20this%20book%27s-,other,-MEAP%20versions%20by)
 - [ ] [Cgroups, namespaces, and beyond: what are containers made from?](https://www.youtube.com/watch?v=sK5i-N34im8)
