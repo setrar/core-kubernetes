@@ -132,13 +132,32 @@ k exec --stdin --tty core-k8s -- ip addr
 ```
 
 
-cat /sys/fs/cgroup/chroot0/cgroup.procs 
-root@kind-control-plane:/home# echo 9602 > /sys/fs/cgroup/chroot0/cgroup.procs 
-root@kind-control-plane:/home# cat /sys/fs/cgroup/chroot0/pids.max
+
+
+```
+echo 9602 > /sys/fs/cgroup/chroot0/cgroup.procs 
+```
+
+```
+cat /sys/fs/cgroup/chroot0/pids.max
+```
+> Outputs
+```
 max
-root@kind-control-plane:/home# echo 1 > /sys/fs/cgroup/chroot0/pids.max
-root@kind-control-plane:/home# cat /sys/fs/cgroup/chroot0/pids.max
+```
+
+
+```
+echo 1 > /sys/fs/cgroup/chroot0/pids.max
+```
+
+```
+cat /sys/fs/cgroup/chroot0/pids.max
+```
+> Outputs
+```
 1
+```
 
 
 ### :three::five::two: Utilizing iptables to understand how kube-proxy implements Kubernetes
