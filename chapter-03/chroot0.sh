@@ -36,12 +36,18 @@ fi
 
 # -------- Populate Proc Folder
 mkdir /home/namespace/box/proc
-mount -t proc proc /home/namespace/box/proc
+# mount -t proc proc /home/namespace/box/proc
 
 # uncomment to protect PIDs
 # add --pid argument protect PIDs
-unshare --net --fork --mount-proc=/home/namespace/box/proc \
+unshare --net --fork  \
 chroot /home/namespace/box /bin/bash
+
+# Capture the bash PIID
+expr $(pidof unshare) + 1
+
+# finally mount proc
+mount -t proc none /proc
 
 # Uncomment to release
 #umount /home/namespace/box/proc
