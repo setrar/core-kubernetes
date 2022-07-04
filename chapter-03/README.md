@@ -120,7 +120,8 @@ k exec --stdin --tty core-k8s -- ip addr
        valid_lft forever preferred_lft forever
 ```
 
-## :three::five::two: 
+### :three::five::two: Utilizing iptables to understand how kube-proxy implements Kubernetes
+
 
 ```
 iptables --append INPUT --source 10.1.2.3 --jump DROP
