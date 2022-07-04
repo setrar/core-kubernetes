@@ -65,55 +65,58 @@ root@kind-control-plane:/# ps -ax | wc -l
 CTR_ID=`docker container ls --quiet`; docker container cp chroot0.sh ${CTR_ID}:/home/chroot0.sh
 ```
 
-### Proper `chroot` Exit
+- [ ] hop onto the container (node in kind)
 
 ```
-umount /home/namespace/box/proc
-```
-```
-umount /home/namespace/box/data
-```
+docker container exec --interactive --tty kind-control-plane /bin/bash
+````
 
-:round_pushpin: from INSIDE your running chroot0 script, get its PID, by running
+- [ ] go home
 
 ```
-root@kind-control-plane:/# echo $$
-```
-> Returns
-```
-9580
+cd home
 ```
 
-```
-root@kind-control-plane:/# 
-```
-> Run
-```
-mkdir -p /sys/fs/cgroup/memory/chroot0 \
-echo "10" > /sys/fs/cgroup/memory/chroot0/memory.limit_in_bytes \
-echo "0" > /sys/fs/cgroup/memory/chroot0/memory.swappiness \
-echo 25266 > /sys/fs/cgroup/memory/chroot0/tasks
-```
-
-:x: bash: tasks: Permission denied :bangbang:
-
-On Manning's forum
+- [ ] Start the `chroot0` script
 
 ```
-James World: I got this working with some changes. It seems, at least in my kind docker container, the paths required are a little different. I did the following:
+bash chroot0.sh
+```
 
+:round_pushpin: from INSIDE your running `chroot0` script, get its PID, by typing (without the `bash-5.1#` prompt)
+
+```
+bash-5.1# expr $(pidof unshare) + 1
+```
+> Returns some PID for example
+```
+9580 
+```
+
+
+- [ ] :desktop_computer: In another window, hop onto the container (node in kind)
+
+```
+docker container exec --interactive --tty kind-control-plane /bin/bash
+```
+
+- [ ] Issue the `cgroup` commands
+
+* Take the PID from the `pidof` command + 1
+
+```
 mkdir -p /sys/fs/cgroup/chroot0
+echo 9580 > /sys/fs/cgroup/chroot0/cgroup.procs
 echo "10" > /sys/fs/cgroup/chroot0/memory.max
 echo "0" > /sys/fs/cgroup/chroot0/memory.swap.max
-echo <proc-id> > /sys/fs/cgroup/chroot0/cgroup.procs
 ```
 
 
+:x: bash: tasks: Permission denied :bangbang: On Manning's forum
 
+* Other `cgroup` variables
 
-```
-echo 9602 > /sys/fs/cgroup/chroot0/cgroup.procs 
-```
+- Display
 
 ```
 cat /sys/fs/cgroup/chroot0/pids.max
@@ -123,10 +126,13 @@ cat /sys/fs/cgroup/chroot0/pids.max
 max
 ```
 
+- Write
 
 ```
 echo 1 > /sys/fs/cgroup/chroot0/pids.max
 ```
+
+- Display
 
 ```
 cat /sys/fs/cgroup/chroot0/pids.max
@@ -135,7 +141,6 @@ cat /sys/fs/cgroup/chroot0/pids.max
 ```
 1
 ```
-
 
 
 ## Pods
