@@ -120,6 +120,21 @@ k exec --stdin --tty core-k8s -- ip addr
        valid_lft forever preferred_lft forever
 ```
 
+## :three::five::two: 
+
+```
+iptables --append INPUT --source 10.1.2.3 --jump DROP
+```
+
+```
+iptables-save | grep 10.1.2.3
+```
+> Outputs
+```
+-A INPUT -s 10.1.2.3/32 -j DROP
+```
+
+
 # References
 
 - [ ] [http://mng.bz/8M12](https://github.com/kubernetes/kubernetes/blob/master/pkg/volume/util/subpath/subpath_linux.go#L93)
