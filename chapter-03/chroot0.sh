@@ -29,10 +29,9 @@ fi
 mkdir /home/namespace/box/proc
 mount -t proc proc /home/namespace/box/proc
 
-echo current PID: $$
-
 # uncomment to protect PIDs
-unshare --pid --net --fork --mount-proc=/home/namespace/box/proc \
+# add --pid argument protect PIDs
+unshare --net --fork --mount-proc=/home/namespace/box/proc \
 chroot /home/namespace/box /bin/bash
 
 # Uncomment to release
