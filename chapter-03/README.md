@@ -93,7 +93,18 @@ echo "0" > /sys/fs/cgroup/memory/chroot0/memory.swappiness \
 echo 25266 > /sys/fs/cgroup/memory/chroot0/tasks
 ```
 
-:x: bash: tasks: Permission denied
+:x: bash: tasks: Permission denied :bangbang:
+
+On Manning's forum
+
+```
+James World: I got this working with some changes. It seems, at least in my kind docker container, the paths required are a little different. I did the following:
+
+mkdir -p /sys/fs/cgroup/chroot0
+echo "10" > /sys/fs/cgroup/chroot0/memory.max
+echo "0" > /sys/fs/cgroup/chroot0/memory.swap.max
+echo <proc-id> > /sys/fs/cgroup/chroot0/cgroup.procs
+```
 
 ## Pods
 
@@ -143,3 +154,4 @@ iptables-save | grep 10.1.2.3
 - [ ] [ArchLinux - chroot](https://wiki.archlinux.org/title/chroot)
 - [ ] [Control Group v2](https://www.kernel.org/doc/html/v5.10/admin-guide/cgroup-v2.html)
 - [ ] [REJECT vs DROP when using iptables](https://serverfault.com/questions/157375/reject-vs-drop-when-using-iptables)
+- [ ] [Forum](https://livebook.manning.com/book/core-kubernetes/chapter-3/#:~:text=from%20this%20book%27s-,other,-MEAP%20versions%20by)
