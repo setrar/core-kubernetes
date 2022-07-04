@@ -131,6 +131,16 @@ k exec --stdin --tty core-k8s -- ip addr
        valid_lft forever preferred_lft forever
 ```
 
+
+cat /sys/fs/cgroup/chroot0/cgroup.procs 
+root@kind-control-plane:/home# echo 9602 > /sys/fs/cgroup/chroot0/cgroup.procs 
+root@kind-control-plane:/home# cat /sys/fs/cgroup/chroot0/pids.max
+max
+root@kind-control-plane:/home# echo 1 > /sys/fs/cgroup/chroot0/pids.max
+root@kind-control-plane:/home# cat /sys/fs/cgroup/chroot0/pids.max
+1
+
+
 ### :three::five::two: Utilizing iptables to understand how kube-proxy implements Kubernetes
 
 
