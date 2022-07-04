@@ -57,6 +57,8 @@ root@kind-control-plane:/# ps -ax | wc -l
 38
 ```
 
+### :three:.:four: Building a Pod from scratch
+
 - [ ] Copy `chroot0.sh` to the `kind-control-plane` container
 
 ```
@@ -162,8 +164,7 @@ k exec --stdin --tty core-k8s -- ip addr
 ```
 
 
-### :three::five::two: Utilizing iptables to understand how kube-proxy implements Kubernetes
-
+## :three:.:five Using our Pod in the real world
 
 ```
 iptables --append INPUT --source 10.1.2.3 --jump DROP
