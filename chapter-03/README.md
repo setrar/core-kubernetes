@@ -143,7 +143,7 @@ cat /sys/fs/cgroup/chroot0/pids.max
 ```
 
 
-## Pods
+## :sauropod: Pods
 
 ```
 k exec --stdin --tty core-k8s -- ip addr
@@ -169,7 +169,7 @@ k exec --stdin --tty core-k8s -- ip addr
 ```
 
 
-## :three:.:five Using our Pod in the real world
+## :three:.:five: Using our Pod in the real world
 
 ```
 iptables --append INPUT --source 10.1.2.3 --jump DROP
