@@ -142,3 +142,4 @@ iptables-save | grep 10.1.2.3
 - [ ] [chroot: failed to run command ‘/bin/bash’: No such file or directory](https://unix.stackexchange.com/questions/128046/chroot-failed-to-run-command-bin-bash-no-such-file-or-directory)
 - [ ] [ArchLinux - chroot](https://wiki.archlinux.org/title/chroot)
 - [ ] [Control Group v2](https://www.kernel.org/doc/html/v5.10/admin-guide/cgroup-v2.html)
+- [ ] [REJECT vs DROP when using iptables](https://serverfault.com/questions/157375/reject-vs-drop-when-using-iptables)
