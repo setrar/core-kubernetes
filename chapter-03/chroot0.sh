@@ -3,13 +3,22 @@ mkdir -p /home/namespace/box
 
 # -------- Populate Binaries
 mkdir /home/namespace/box/bin
-cp -v /usr/bin/kill /home/namespace/box/bin
-cp -v /usr/bin/ps /home/namespace/box/bin
+
+# Add shell tools
 cp -v /bin/bash /home/namespace/box/bin
-cp -v /bin/ls /home/namespace/box/bin
+cp -v /bin/expr /home/namespace/box/bin
 
 # Add network tools
 cp -v /bin/ip /home/namespace/box/bin
+
+# Add disk tools
+cp -v /bin/ls /home/namespace/box/bin
+cp -v /bin/mount /home/namespace/box/bin
+
+# Add process tools
+cp -v /usr/bin/kill /home/namespace/box/bin
+cp -v /usr/bin/ps /home/namespace/box/bin
+cp -v /bin/pidof /home/namespace/box/bin
 
 # -------- Populate Libraries
 mkdir /home/namespace/box/lib
