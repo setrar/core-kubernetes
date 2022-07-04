@@ -31,24 +31,22 @@ if [ "${ARCH}" == "x86_64" ]; then
 fi
 
 # Uncomment to populate data volume
-#mkdir /home/namespace/box/data
-#mount --bind /tmp/ /home/namespace/box/data
+mkdir /home/namespace/box/data
+mount --bind /tmp/ /home/namespace/box/data
 
 # -------- Populate Proc Folder
 mkdir /home/namespace/box/proc
-# mount -t proc proc /home/namespace/box/proc
+mount --type proc proc /home/namespace/box/proc
 
-# uncomment to protect PIDs
-# add --pid argument protect PIDs
-unshare --net --fork  \
-chroot /home/namespace/box /bin/bash
+# -------- Protect Namespaces
+unshare --mount --uts --ipc --net --pid --fork chroot /home/namespace/box /bin/bash
 
-# Capture the bash PIID
+# Issue the below command to capture the bash's PID
 expr $(pidof unshare) + 1
 
-# finally mount proc
-mount -t proc none /proc
+# finally mount proc to isolate PIDs
+mount --type proc none /proc
 
-# Uncomment to release
-#umount /home/namespace/box/proc
-#umount /home/namespace/box/data
+# Release
+umount /home/namespace/box/proc
+umount /home/namespace/box/data
