@@ -14,6 +14,7 @@ cp -v /bin/ip /home/namespace/box/bin
 # Add disk tools
 cp -v /bin/ls /home/namespace/box/bin
 cp -v /bin/mount /home/namespace/box/bin
+cp -v /bin/umount /home/namespace/box/bin
 
 # Add process tools
 cp -v /usr/bin/kill /home/namespace/box/bin
