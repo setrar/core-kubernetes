@@ -1,28 +1,60 @@
+# Chapter :zero::four:
+
+```
 docker container exec --interactive --tty kind-control-plane bash
-root@kind-control-plane:/# 
-root@kind-control-plane:/# 
-root@kind-control-plane:/# ls -l
-total 52
-lrwxrwxrwx   1 root root    7 Apr 22  2021 bin -> usr/bin
-drwxr-xr-x   2 root root 4096 Apr 19  2021 boot
-drwxr-xr-x   9 root root 2820 Jul 16 10:36 dev
-drwxr-xr-x   1 root root 4096 Jul 16 10:36 etc
-drwxr-xr-x   1 root root 4096 Jul  5 10:46 home
-drwxr-xr-x   1 root root 4096 Jul  4 21:32 kind
-lrwxrwxrwx   1 root root    7 Apr 22  2021 lib -> usr/lib
-drwxr-xr-x   2 root root 4096 Apr 22  2021 media
-drwxr-xr-x   2 root root 4096 Apr 22  2021 mnt
-drwxr-xr-x   1 root root 4096 May 22  2021 opt
-dr-xr-xr-x 212 root root    0 Jul 16 10:36 proc
-drwx------   1 root root 4096 Jul  5 10:55 root
-drwxr-xr-x  11 root root  240 Jul 16 10:36 run
-lrwxrwxrwx   1 root root    8 Apr 22  2021 sbin -> usr/sbin
-drwxr-xr-x   2 root root 4096 Apr 22  2021 srv
-dr-xr-xr-x  13 root root    0 Jul 16 10:36 sys
-drwxrwxrwt   2 root root   40 Jul 16 10:36 tmp
-drwxr-xr-x   1 root root 4096 Apr 22  2021 usr
-drwxr-xr-x  11 root root 4096 Jul  4 21:32 var
-root@kind-control-plane:/# systemctl status
+```
+
+## :round_pushpin: 4.2 Processes and threads in Linux
+
+```
+ps -ax | grep scheduler
+```
+> Outputs
+```
+    434 ?        Ssl    0:52 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --authorization-kubeconfig=/etc/kubernetes/scheduler.conf --bind-address=127.0.0.1 --kubeconfig=/etc/kubernetes/scheduler.conf --leader-elect=true --port=0
+  51849 pts/1    S+     0:00 grep --color=auto scheduler
+```
+
+```
+ps --help threads    
+```
+> Outputs
+```
+Usage:
+ ps [options]
+
+Show threads:
+  H                   as if they were processes
+ -L                   possibly with LWP and NLWP columns
+ -m, m                after processes
+ -T                   possibly with SPID column
+```
+
+```
+ps -T 434
+```
+> Outputs
+```
+    PID    SPID TTY      STAT   TIME COMMAND
+    434     434 ?        Rsl    0:08 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
+    434     500 ?        Rsl    0:12 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
+    434     501 ?        Ssl    0:00 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
+    434     502 ?        Ssl    0:00 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
+    434     503 ?        Ssl    0:03 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
+    434     513 ?        Ssl    0:06 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
+    434     514 ?        Ssl    0:08 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
+    434     607 ?        Ssl    0:00 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
+    434     608 ?        Ssl    0:08 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
+    434   16504 ?        Rsl    0:05 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
+```
+
+## :round_pushin: 4.2.1 systemd and the init process
+
+```
+systemctl status
+```
+> Outputs
+```
 ● kind-control-plane
     State: running
      Jobs: 0 queued
@@ -99,21 +131,23 @@ root@kind-control-plane:/# systemctl status
                    │ └─978 /pause
                    └─f5cfbbf0ab83c29c42f4c1e84f12ca91ef77a2c39ee9b753b48cfbb743958947 
                      └─1011 /usr/local/bin/kube-proxy --config=/var/lib/kube-proxy/config.conf --hostname-override=kind-control-plane
-root@kind-control-plane:/# ps -ax | grep scheduler
-    434 ?        Ssl    0:52 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --authorization-kubeconfig=/etc/kubernetes/scheduler.conf --bind-address=127.0.0.1 --kubeconfig=/etc/kubernetes/scheduler.conf --leader-elect=true --port=0
-  51849 pts/1    S+     0:00 grep --color=auto scheduler
-root@kind-control-plane:/# ps -T 434
-    PID    SPID TTY      STAT   TIME COMMAND
-    434     434 ?        Rsl    0:08 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
-    434     500 ?        Rsl    0:12 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
-    434     501 ?        Ssl    0:00 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
-    434     502 ?        Ssl    0:00 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
-    434     503 ?        Ssl    0:03 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
-    434     513 ?        Ssl    0:06 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
-    434     514 ?        Ssl    0:08 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
-    434     607 ?        Ssl    0:00 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
-    434     608 ?        Ssl    0:08 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
-    434   16504 ?        Rsl    0:05 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
+```
+
+```
+apt-get install psmisc
+```
+
+pstree --thread-names --compact-not | grep sched
+        |-containerd-shim-+-kube-scheduler-+-{kube-scheduler}
+        |                 |                |-{kube-scheduler}
+        |                 |                |-{kube-scheduler}
+        |                 |                |-{kube-scheduler}
+        |                 |                |-{kube-scheduler}
+        |                 |                |-{kube-scheduler}
+        |                 |                |-{kube-scheduler}
+        |                 |                |-{kube-scheduler}
+        |                 |                `-{kube-scheduler}
+
 root@kind-control-plane:/# pstree --thread -c | grep sched
 bash: pstree: command not found
 root@kind-control-plane:/# apt install pstree             
