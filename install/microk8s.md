@@ -662,3 +662,15 @@ microk8s (1.22/stable) v1.22.9 from Canonical✓ installed
 microk8s-integrator-macos 0.1 from Canonical✓ installed
 MicroK8s is up and running. See the available commands with `microk8s --help`.
 ```
+
+:round_pushpin: Verify
+
+```
+multipass list 
+```
+> Outputs
+```
+Name                    State             IPv4             Image
+microk8s-vm             Running           192.168.64.8     Ubuntu 18.04 LTS
+                                          10.1.254.64
+```
