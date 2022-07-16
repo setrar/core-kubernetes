@@ -723,6 +723,13 @@ permissions as shown in:
 https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
 ```
 
+## :b: Access the control plane node
+
+```
+multipass shell microk8s-vm
+```
+
+
 # References
 
 - [ ] [Install MicroK8s on Apple M1 silicon](https://ubuntu.com/tutorials/installing-microk8s-on-apple-m1-silicon)
