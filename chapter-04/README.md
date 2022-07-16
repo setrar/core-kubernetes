@@ -48,7 +48,7 @@ ps -T 434
     434   16504 ?        Rsl    0:05 kube-scheduler --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --autho
 ```
 
-## :round_pushin: 4.2.1 systemd and the init process
+## :round_pushpin: 4.2.1 systemd and the init process
 
 ```
 systemctl status
