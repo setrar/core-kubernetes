@@ -729,6 +729,22 @@ https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/cre
 multipass shell microk8s-vm
 ```
 
+- [ ] Useful multipass commands
+
+    * Shutdown the VM:
+
+```
+multipass stop microk8s-vm
+```
+
+    * Delete and cleanup the VM:
+
+```
+multipass delete microk8s-vm && multipass purge
+```
+
+
+
 
 # References
 
