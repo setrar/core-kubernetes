@@ -150,7 +150,7 @@ systemctl status
                      └─1011 /usr/local/bin/kube-proxy --config=/var/lib/kube-proxy/config.conf --hostname-override=kind-control-plane
 ```
 
-## :round_pushpin: 4.2.2 
+## :round_pushpin: 4.2.2 cgroups for our process
 
 ```
 cat /proc/*/cgroup
