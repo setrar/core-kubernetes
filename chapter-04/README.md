@@ -235,3 +235,22 @@ MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   6183.0 avail Mem
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                       
   69701 root      20   0    1376      4      0 R  99.7   0.0   1:31.09 dd  
 ```
+
+- [ ] Edit the `pod.yaml` file and reduce the limits
+
+Rerun top and observer the `%CPU` column limited to `10.0%`
+
+```
+top
+```
+> Outputs
+```
+top - 20:29:12 up  3:41,  0 users,  load average: 0.48, 0.88, 0.77
+Tasks:  38 total,   2 running,  36 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  2.6 us,  2.0 sy,  0.0 ni, 95.4 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7951.3 total,   4810.8 free,   1260.2 used,   1880.3 buff/cache
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   6185.4 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                       
+  76195 root      20   0    1376      4      0 R  10.0   0.0   0:02.25 dd 
+```
