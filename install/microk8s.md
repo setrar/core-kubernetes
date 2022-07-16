@@ -1,3 +1,9 @@
+# microk8s on Apple M1
+
+## :gear: Install 
+
+:round_pushpin: Unpack
+
 ```
 brew install ubuntu/microk8s/microk8s
 ```
@@ -640,4 +646,19 @@ The "examples" directory has been installed to:
 
 zsh completions and functions have been installed to:
   /opt/homebrew/share/zsh/site-functions
+```
+
+:round_pushpin: Install
+
+
+```
+microk8s install
+```
+> Outputs
+```
+Launched: microk8s-vm                                                           
+2022-07-16T09:48:17Z INFO Waiting for automatic snapd restart...
+microk8s (1.22/stable) v1.22.9 from Canonical✓ installed
+microk8s-integrator-macos 0.1 from Canonical✓ installed
+MicroK8s is up and running. See the available commands with `microk8s --help`.
 ```
