@@ -195,14 +195,36 @@ cat /proc/*/cgroup
 
 ## :round_pushpin: Testing the cgroups
 
+- [ ] Create the pod with resources
+
 ```
 kubectl create -f pod.yaml
 ```
+
+- [ ] hop onto the pod
 
 ```
 kubectl exec --stdin --tty core-k8s -- /bin/sh
 ```
 
+- [ ] create the killer command
+
+```
+dd if=/dev/zero of=/dev/null
+```
+
+- [ ] :desktop_computer: On a separate window open the kind control plane 
+
+```
+docker container exec --interactive --tty kind-control-plane /bin/bash
+```
+
+- [ ] run top command
+
+```
+top
+```
+> Outputs
 ```
 top - 20:11:59 up  3:25,  0 users,  load average: 0.88, 0.43, 0.29
 Tasks:  38 total,   2 running,  36 sleeping,   0 stopped,   0 zombie
