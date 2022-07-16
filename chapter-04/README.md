@@ -192,3 +192,24 @@ cat /proc/*/cgroup
 0::/init.scope
 0::/init.scope
 ```
+
+## :round_pushpin: Testing the cgroups
+
+```
+kubectl create -f pod.yaml
+```
+
+```
+kubectl exec --stdin --tty core-k8s -- /bin/sh
+```
+
+```
+top - 20:11:59 up  3:25,  0 users,  load average: 0.88, 0.43, 0.29
+Tasks:  38 total,   2 running,  36 sleeping,   0 stopped,   0 zombie
+%Cpu(s): 15.6 us, 12.2 sy,  0.1 ni, 71.9 id,  0.1 wa,  0.0 hi,  0.2 si,  0.0 st
+MiB Mem :   7951.3 total,   4812.9 free,   1262.6 used,   1875.9 buff/cache
+MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   6183.0 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                       
+  69701 root      20   0    1376      4      0 R  99.7   0.0   1:31.09 dd  
+```
