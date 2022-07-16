@@ -236,7 +236,7 @@ MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   6183.0 avail Mem
   69701 root      20   0    1376      4      0 R  99.7   0.0   1:31.09 dd  
 ```
 
-- [ ] Edit the `pod.yaml` file and reduce the limits
+- [ ] Edit the [`pod.yaml`](pod.yaml) file and reduce the limits
 
 Rerun `top` and observe the `%CPU` column limited to `10.0%`
 
