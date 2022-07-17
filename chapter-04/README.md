@@ -259,6 +259,8 @@ MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   6185.4 avail Mem
 
 Various quantifiable resources:
 
+- [ ] On `AWS` worker plane
+
 ```
 ls -d /sys/fs/cgroup/*
 ```
@@ -267,6 +269,51 @@ ls -d /sys/fs/cgroup/*
 /sys/fs/cgroup/blkio        /sys/fs/cgroup/cpuacct  /sys/fs/cgroup/freezer  /sys/fs/cgroup/misc              /sys/fs/cgroup/net_prio    /sys/fs/cgroup/rdma
 /sys/fs/cgroup/cpu          /sys/fs/cgroup/cpuset   /sys/fs/cgroup/hugetlb  /sys/fs/cgroup/net_cls           /sys/fs/cgroup/perf_event  /sys/fs/cgroup/systemd
 /sys/fs/cgroup/cpu,cpuacct  /sys/fs/cgroup/devices  /sys/fs/cgroup/memory   /sys/fs/cgroup/net_cls,net_prio  /sys/fs/cgroup/pids        /sys/fs/cgroup/unified
+```
+
+- [ ] On `kind` control plane
+
+```
+ls -d /sys/fs/cgroup/*
+```
+> Outputs
+```
+/sys/fs/cgroup/cgroup.controllers         /sys/fs/cgroup/hugetlb.32MB.rsvd.current
+/sys/fs/cgroup/cgroup.events              /sys/fs/cgroup/hugetlb.32MB.rsvd.max
+/sys/fs/cgroup/cgroup.freeze              /sys/fs/cgroup/hugetlb.64KB.current
+/sys/fs/cgroup/cgroup.max.depth           /sys/fs/cgroup/hugetlb.64KB.events
+/sys/fs/cgroup/cgroup.max.descendants     /sys/fs/cgroup/hugetlb.64KB.events.local
+/sys/fs/cgroup/cgroup.procs               /sys/fs/cgroup/hugetlb.64KB.max
+/sys/fs/cgroup/cgroup.stat                /sys/fs/cgroup/hugetlb.64KB.rsvd.current
+/sys/fs/cgroup/cgroup.subtree_control     /sys/fs/cgroup/hugetlb.64KB.rsvd.max
+/sys/fs/cgroup/cgroup.threads             /sys/fs/cgroup/init.scope
+/sys/fs/cgroup/cgroup.type                /sys/fs/cgroup/io.bfq.weight
+/sys/fs/cgroup/cpu.max                    /sys/fs/cgroup/io.max
+/sys/fs/cgroup/cpu.stat                   /sys/fs/cgroup/io.stat
+/sys/fs/cgroup/cpu.weight                 /sys/fs/cgroup/kubelet
+/sys/fs/cgroup/cpu.weight.nice            /sys/fs/cgroup/memory.current
+/sys/fs/cgroup/cpuset.cpus                /sys/fs/cgroup/memory.events
+/sys/fs/cgroup/cpuset.cpus.effective      /sys/fs/cgroup/memory.events.local
+/sys/fs/cgroup/cpuset.cpus.partition      /sys/fs/cgroup/memory.high
+/sys/fs/cgroup/cpuset.mems                /sys/fs/cgroup/memory.low
+/sys/fs/cgroup/cpuset.mems.effective      /sys/fs/cgroup/memory.max
+/sys/fs/cgroup/dev-hugepages.mount        /sys/fs/cgroup/memory.min
+/sys/fs/cgroup/hugetlb.1GB.current        /sys/fs/cgroup/memory.oom.group
+/sys/fs/cgroup/hugetlb.1GB.events         /sys/fs/cgroup/memory.stat
+/sys/fs/cgroup/hugetlb.1GB.events.local   /sys/fs/cgroup/memory.swap.current
+/sys/fs/cgroup/hugetlb.1GB.max            /sys/fs/cgroup/memory.swap.events
+/sys/fs/cgroup/hugetlb.1GB.rsvd.current   /sys/fs/cgroup/memory.swap.high
+/sys/fs/cgroup/hugetlb.1GB.rsvd.max       /sys/fs/cgroup/memory.swap.max
+/sys/fs/cgroup/hugetlb.2MB.current        /sys/fs/cgroup/pids.current
+/sys/fs/cgroup/hugetlb.2MB.events         /sys/fs/cgroup/pids.events
+/sys/fs/cgroup/hugetlb.2MB.events.local   /sys/fs/cgroup/pids.max
+/sys/fs/cgroup/hugetlb.2MB.max            /sys/fs/cgroup/rdma.current
+/sys/fs/cgroup/hugetlb.2MB.rsvd.current   /sys/fs/cgroup/rdma.max
+/sys/fs/cgroup/hugetlb.2MB.rsvd.max       /sys/fs/cgroup/sys-fs-fuse-connections.mount
+/sys/fs/cgroup/hugetlb.32MB.current       /sys/fs/cgroup/sys-kernel-debug.mount
+/sys/fs/cgroup/hugetlb.32MB.events        /sys/fs/cgroup/sys-kernel-tracing.mount
+/sys/fs/cgroup/hugetlb.32MB.events.local  /sys/fs/cgroup/system.slice
+/sys/fs/cgroup/hugetlb.32MB.max
 ```
 
 ## 4.5 Diving into how the kubelet manages resources
