@@ -255,6 +255,20 @@ MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   6185.4 avail Mem
   76195 root      20   0    1376      4      0 R  10.0   0.0   0:02.25 dd 
 ```
 
+## 4.4 How kubelet manages cgroups
+
+Various quantifiable resources:
+
+```
+ls -d /sys/fs/cgroup/*
+```
+> Outputs
+```
+/sys/fs/cgroup/blkio        /sys/fs/cgroup/cpuacct  /sys/fs/cgroup/freezer  /sys/fs/cgroup/misc              /sys/fs/cgroup/net_prio    /sys/fs/cgroup/rdma
+/sys/fs/cgroup/cpu          /sys/fs/cgroup/cpuset   /sys/fs/cgroup/hugetlb  /sys/fs/cgroup/net_cls           /sys/fs/cgroup/perf_event  /sys/fs/cgroup/systemd
+/sys/fs/cgroup/cpu,cpuacct  /sys/fs/cgroup/devices  /sys/fs/cgroup/memory   /sys/fs/cgroup/net_cls,net_prio  /sys/fs/cgroup/pids        /sys/fs/cgroup/unified
+```
+
 ## 4.5 Diving into how the kubelet manages resources
 
 - [ ] On a `kops` `AWS` cluster 
