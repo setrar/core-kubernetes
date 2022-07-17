@@ -257,7 +257,7 @@ MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   6185.4 avail Mem
 
 ## 4.5 Diving into how the kubelet manages resources
 
-- [ ] On a `kops` cluster 
+- [ ] On a `kops` `AWS` cluster 
 
 ```
 kubectl get node ip-172-20-12-30.ca-central-1.compute.internal  --output json | jq '.status.allocatable'
@@ -274,4 +274,18 @@ kubectl get node ip-172-20-12-30.ca-central-1.compute.internal  --output json | 
 }
 ```
 
+- [ ] On a `kind` cluster
 
+```
+kubectl get node kind-control-plane --output json | jq '.status.allocatable'
+{
+  "cpu": "4",
+  "ephemeral-storage": "61255492Ki",
+  "hugepages-1Gi": "0",
+  "hugepages-2Mi": "0",
+  "hugepages-32Mi": "0",
+  "hugepages-64Ki": "0",
+  "memory": "8142120Ki",
+  "pods": "110"
+}
+```
