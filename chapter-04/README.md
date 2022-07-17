@@ -254,3 +254,24 @@ MiB Swap:   1024.0 total,   1024.0 free,      0.0 used.   6185.4 avail Mem
     PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                       
   76195 root      20   0    1376      4      0 R  10.0   0.0   0:02.25 dd 
 ```
+
+## 4.5 Diving into how the kubelet manages resources
+
+- [ ] On a `kops` cluster 
+
+```
+kubectl get node ip-172-20-12-30.ca-central-1.compute.internal  --output json | jq '.status.allocatable'
+```
+> Ouputs
+```json
+{
+  "cpu": "8",
+  "ephemeral-storage": "119850334420",
+  "hugepages-1Gi": "0",
+  "hugepages-2Mi": "0",
+  "memory": "32500116Ki",
+  "pods": "110"
+}
+```
+
+
