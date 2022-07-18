@@ -350,3 +350,8 @@ kubectl get node kind-control-plane --output json | jq '.status.allocatable'
   "pods": "110"
 }
 ```
+
+# References
+
+- [ ] [cgroup-v1/cgroups.txt](https://www.kernel.org/doc/Documentation/cgroup-v1/cgroups.txt)
+- [ ] [cgroup-v1/cpusets.txt](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
