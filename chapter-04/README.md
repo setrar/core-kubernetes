@@ -355,3 +355,4 @@ kubectl get node kind-control-plane --output json | jq '.status.allocatable'
 
 - [ ] [cgroup-v1/cgroups.txt](https://www.kernel.org/doc/Documentation/cgroup-v1/cgroups.txt)
 - [ ] [cgroup-v1/cpusets.txt](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
+- [ ] [Configuring a cgroup driver](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#kube-reserved)
