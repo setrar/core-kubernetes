@@ -749,3 +749,4 @@ multipass delete microk8s-vm && multipass purge
 # References
 
 - [ ] [Install MicroK8s on Apple M1 silicon](https://ubuntu.com/tutorials/installing-microk8s-on-apple-m1-silicon)
+- [ ] [Kubernetes: microk8s with multiple Istio ingress gateways](https://fabianlee.org/2021/07/31/kubernetes-microk8s-with-multiple-istio-ingress-gateways/)
