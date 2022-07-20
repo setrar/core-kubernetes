@@ -339,6 +339,9 @@ kubectl get node ip-172-20-12-30.ca-central-1.compute.internal  --output json | 
 
 ```
 kubectl get node kind-control-plane --output json | jq '.status.allocatable'
+```
+> Ouputs
+```json
 {
   "cpu": "4",
   "ephemeral-storage": "61255492Ki",
