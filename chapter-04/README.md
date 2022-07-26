@@ -508,6 +508,9 @@ etcd_request_duration_seconds_sum{operation="get",type="*core.Pod"} 220.68180331
 etcd_request_duration_seconds_count{operation="get",type="*core.Pod"} 144901
 ```
 
+:exclamation_mark: The majority of the requests are under le="0.025"
+
+
 
 
 # References
