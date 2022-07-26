@@ -369,7 +369,7 @@ pod/myapp created
 k get pods myapp -n qos -o yaml
 ```
 > Outputs
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
