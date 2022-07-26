@@ -72,6 +72,12 @@ CONTAINER ID   IMAGE                  COMMAND                  CREATED          
 docker container exec --interactive --tty kind-control-plane /bin/bash
 ```
 
+## :bulb: Prometeus
+
+```
+brew install prometheus
+```
+
 # References
 
 - [ ] [zsh comment character](https://apple.stackexchange.com/questions/405246/zsh-comment-character)
