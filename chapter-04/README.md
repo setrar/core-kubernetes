@@ -548,6 +548,10 @@ ts=2022-07-26T13:19:57.497Z caller=main.go:957 level=info msg="Server is ready t
 ts=2022-07-26T13:19:57.498Z caller=manager.go:941 level=info component="rule manager" msg="Starting rule manager..."
 ```
 
+```
+kubectl apply -f https://raw.githubusercontent.com/giantswarm/kube-stresscheck/master/examples/node.yaml
+```
+
 
 # References
 
