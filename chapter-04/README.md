@@ -470,6 +470,45 @@ status:
   startTime: "2022-07-26T11:29:09Z"
 ```
 
+:x: Didn't wotk can't edit!
+
+## 4.6.2 Why do I need Prometheus?
+
+```
+k proxy                                       
+```
+> Outputs
+```
+Starting to serve on 127.0.0.1:8001
+```
+
+In another window, run:
+
+```
+curl localhost:8001/metrics | grep etcd | grep core.Pod | grep get | grep \*core.Pod
+```
+> Outputs
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 6455k    0 6455k    0     0  15.2M      0 --:--:-- --:--:-- --:--:-- 15.3M
+etcd_request_duration_seconds_bucket{operation="get",type="*core.Pod",le="0.005"} 141825
+etcd_request_duration_seconds_bucket{operation="get",type="*core.Pod",le="0.025"} 144879
+etcd_request_duration_seconds_bucket{operation="get",type="*core.Pod",le="0.1"} 144898
+etcd_request_duration_seconds_bucket{operation="get",type="*core.Pod",le="0.25"} 144898
+etcd_request_duration_seconds_bucket{operation="get",type="*core.Pod",le="0.5"} 144899
+etcd_request_duration_seconds_bucket{operation="get",type="*core.Pod",le="1"} 144899
+etcd_request_duration_seconds_bucket{operation="get",type="*core.Pod",le="2"} 144899
+etcd_request_duration_seconds_bucket{operation="get",type="*core.Pod",le="4"} 144899
+etcd_request_duration_seconds_bucket{operation="get",type="*core.Pod",le="15"} 144901
+etcd_request_duration_seconds_bucket{operation="get",type="*core.Pod",le="30"} 144901
+etcd_request_duration_seconds_bucket{operation="get",type="*core.Pod",le="60"} 144901
+etcd_request_duration_seconds_bucket{operation="get",type="*core.Pod",le="+Inf"} 144901
+etcd_request_duration_seconds_sum{operation="get",type="*core.Pod"} 220.68180331800176
+etcd_request_duration_seconds_count{operation="get",type="*core.Pod"} 144901
+```
+
+
 
 # References
 
