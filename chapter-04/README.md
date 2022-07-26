@@ -552,6 +552,8 @@ ts=2022-07-26T13:19:57.498Z caller=manager.go:941 level=info component="rule man
 kubectl apply -f https://raw.githubusercontent.com/giantswarm/kube-stresscheck/master/examples/node.yaml
 ```
 
+![images](images/grafana.png)
+
 
 # References
 
