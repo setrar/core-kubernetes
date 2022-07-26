@@ -472,6 +472,15 @@ status:
 
 :x: Didn't wotk can't edit!
 
+```
+k delete ns qos
+```
+> Outputs
+```
+namespace "qos" deleted
+```
+
+
 ## 4.6.2 Why do I need Prometheus?
 
 ```
