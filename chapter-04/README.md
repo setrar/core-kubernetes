@@ -354,6 +354,18 @@ kubectl get node kind-control-plane --output json | jq '.status.allocatable'
 }
 ```
 
+## 4.5.5 Creating QoS classes by setting resources
+
+```
+k create ns qos; k -n qos run --image=nginx myapp
+```
+> Outputs
+```
+namespace/qos created
+pod/myapp created
+```
+
+
 # References
 
 - [ ] [cgroup-v1/cgroups.txt](https://www.kernel.org/doc/Documentation/cgroup-v1/cgroups.txt)
