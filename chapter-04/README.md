@@ -552,6 +552,7 @@ ts=2022-07-26T13:19:57.498Z caller=manager.go:941 level=info component="rule man
 kubectl apply -f https://raw.githubusercontent.com/giantswarm/kube-stresscheck/master/examples/node.yaml
 ```
 
+![images](images/DashboardImport.png)
 ![images](images/DockerMonitoring.png)
 ![images](images/grafana.png)
 
@@ -561,3 +562,4 @@ kubectl apply -f https://raw.githubusercontent.com/giantswarm/kube-stresscheck/m
 - [ ] [cgroup-v1/cgroups.txt](https://www.kernel.org/doc/Documentation/cgroup-v1/cgroups.txt)
 - [ ] [cgroup-v1/cpusets.txt](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
 - [ ] [Configuring a cgroup driver](https://kubernetes.io/docs/tasks/administer-cluster/reserve-compute-resources/#kube-reserved)
+- [ ] [Docker Monitoring with cAdvisor, Prometheus and Grafana](https://medium.com/@mertcan.simsek276/docker-monitoring-with-cadvisor-prometheus-and-grafana-adefe1202bf8)
