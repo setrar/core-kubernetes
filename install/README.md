@@ -126,6 +126,8 @@ User: admin
 
 ## :bulb: etcd
 
+- [ ] Install
+
 ```
 brew install etcd
 ```
