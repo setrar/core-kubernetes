@@ -149,6 +149,33 @@ Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
 Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
 ```
 
+- [ ] Version
+
+```
+etcdctl
+```
+> Outputs
+```
+NAME:
+	etcdctl - A simple command line client for etcd3.
+
+USAGE:
+	etcdctl ÆflagsÅ
+
+VERSION:
+	3.5.4
+
+API VERSION:
+	3.5
+
+      --keepalive-time=2s			keepalive time for client connections
+      --keepalive-timeout=6s			keepalive timeout for client connections
+      --key=""					identify secure client using this TLS key file
+      --password=""				password for authentication (if this option is used, --user option shouldn't include password)
+      --user=""					usernameÆ:passwordÅ for authentication (prompt if password is not supplied)
+  -w, --write-out="simple"			set the output format (fields, json, protobuf, simple, table)
+```
+
 # References
 
 - [ ] [zsh comment character](https://apple.stackexchange.com/questions/405246/zsh-comment-character)
