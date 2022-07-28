@@ -53,6 +53,18 @@ etcdctl put greeting "Hello, etcd"
 OK
 ```
 
+- [ ] Pull again
+
+```
+etcdctl get greeting    
+```
+> Outputs
+```
+greeting
+Hello, etcd
+```
+
+
 # References
 
 - [ ] [etcd - Quickstart](https://etcd.io/docs/v3.5/quickstart/)
