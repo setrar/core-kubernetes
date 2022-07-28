@@ -3,4 +3,4 @@
 
 # References
 
-- https://github.com/etcd-io/website/blob/main/content/en/docs/v3.5/op-guide/recovery.md 
+- [ ] [Operations guide - Disaster recovery](https://etcd.io/docs/v3.5/op-guide/recovery)
