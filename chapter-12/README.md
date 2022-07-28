@@ -1,6 +1,7 @@
 # Chapter :one::two: - etcd and the control plane
 
 
+```
 etcdctl put greeting "Hello, etcd"
 ```
 > Outputs
