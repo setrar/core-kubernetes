@@ -13,4 +13,6 @@ Error: context deadline exceeded
 
 # References
 
+- [ ] [etcd - Quickstart](https://etcd.io/docs/v3.5/quickstart/)
+
 - [ ] [Operations guide - Disaster recovery](https://etcd.io/docs/v3.5/op-guide/recovery)
