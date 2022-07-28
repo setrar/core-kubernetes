@@ -124,6 +124,31 @@ open http://localhost:3000
 
 User: admin 
 
+## :bulb: etcd
+
+```
+brew install etcd
+```
+> Outputs
+```
+==> Downloading https://ghcr.io/v2/homebrew/core/etcd/manifests/3.5.4
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/etcd/blobs/sha256:4daf47ff317a297fe7e508ab74799ed4d9a133aafc30cd1ed510f7007abbc958
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256:4daf47ff317a297fe7e508ab74799ed4d9a133aafc30cd1ed510f70
+######################################################################## 100.0%
+==> Pouring etcd--3.5.4.arm64_monterey.bottle.tar.gz
+==> Caveats
+To restart etcd after an upgrade:
+  brew services restart etcd
+Or, if you don't want/need a background service you can just run:
+  ETCD_UNSUPPORTED_ARCH="arm64" /opt/homebrew/opt/etcd/bin/etcd
+==> Summary
+🍺  /opt/homebrew/Cellar/etcd/3.5.4: 9 files, 71MB
+==> Running `brew cleanup etcd`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+```
+
 # References
 
 - [ ] [zsh comment character](https://apple.stackexchange.com/questions/405246/zsh-comment-character)
