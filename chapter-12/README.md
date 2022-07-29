@@ -69,7 +69,24 @@ kubectl exec --stdin --tty --namespace kube-system etcd-manager-main-ip-172-20-5
 ```
 
 
-/etc/kubernetes/pki/etcd-manager-main/etcd-
+```
+export ETCDCTL_API=3
+ETCD_ENDPOINT_MAIN="https://localhost:4001"
+ETCD_ENDPOINT_EVENTS="https://localhost:4002"
+CA_FILE="/srv/kubernetes/ca.crt"
+ETCD_CMD="etcdctl --cacert ${CA_FILE}"
+```
+
+```
+${ETCD_CMD} --endpoints ${ETCD_ENDPOINT_MAIN} check perf
+```
+
+```
+rev=`${ETCD_CMD} --endpoints ${ETCD_ENDPOINT_MAIN} endpoint status --write-out="json" | egrep -o '"revision":[0-9]*' | egrep -o '[0-9]*'`
+${ETCD_CMD} --endpoints ${ETCD_ENDPOINT_MAIN} compact $rev
+${ETCD_CMD} --endpoints ${ETCD_ENDPOINT_MAIN} defrag
+${ETCD_CMD} --endpoints ${ETCD_ENDPOINT_MAIN} alarm disarm
+```
 
 ```
 sudo \
