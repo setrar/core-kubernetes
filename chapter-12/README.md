@@ -119,3 +119,5 @@ Error: context deadline exceeded
 - [ ] [etcd - Quickstart](https://etcd.io/docs/v3.5/quickstart/)
 
 - [ ] [Operations guide - Disaster recovery](https://etcd.io/docs/v3.5/op-guide/recovery)
+
+- [ ] [ETCD database space / quota exceeded, goes into maintenance mode](https://github.com/kubernetes/kops/issues/4005#issuecomment-349048006)
