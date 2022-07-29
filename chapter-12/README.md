@@ -74,12 +74,14 @@ export ETCDCTL_API=3
 ETCD_ENDPOINT_MAIN="https://localhost:4001"
 ETCD_ENDPOINT_EVENTS="https://localhost:4002"
 CA_FILE="/srv/kubernetes/ca.crt"
+CERT_FILE="/srv/kubernetes/kubelet-server.crt"
+KEY_FILE="/srv/kubernetes/kubelet-server.key"
 ETCD_BIN="/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/29/fs/opt/etcd-v3.5.1-linux-amd64/etcdctl"
-ETCD_CMD="${ETCD_BIN} --cacert ${CA_FILE}"
+ETCD_CMD="${ETCD_BIN} --cacert ${CA_FILE} --cert ${CERT_FILE} --key ${KEY_FILE}"
 ```
 
 ```
-${ETCD_CMD} --endpoints ${ETCD_ENDPOINT_MAIN} check perf
+sudo ${ETCD_CMD} --endpoints ${ETCD_ENDPOINT_MAIN} check perf
 ```
 
 ```
