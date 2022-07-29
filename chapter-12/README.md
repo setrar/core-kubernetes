@@ -74,7 +74,8 @@ export ETCDCTL_API=3
 ETCD_ENDPOINT_MAIN="https://localhost:4001"
 ETCD_ENDPOINT_EVENTS="https://localhost:4002"
 CA_FILE="/srv/kubernetes/ca.crt"
-ETCD_CMD="etcdctl --cacert ${CA_FILE}"
+ETCD_BIN="/var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/29/fs/opt/etcd-v3.5.1-linux-amd64/etcdctl"
+ETCD_CMD="${ETCD_BIN} --cacert ${CA_FILE}"
 ```
 
 ```
