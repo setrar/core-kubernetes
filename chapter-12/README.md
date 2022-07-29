@@ -69,6 +69,31 @@ kubectl exec --stdin --tty --namespace kube-system etcd-manager-main-ip-172-20-5
 ```
 
 
+/etc/kubernetes/pki/etcd-manager-main/etcd-
+
+```
+sudo \
+  /var/lib/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/29/fs/opt/etcd-v3.5.1-linux-amd64/etcdctl \
+  --endpoints="https://localhost:2379" \
+  --cacert="/etc/kubernetes/pki/etcd-manager-main/etcd-manager-ca.crt" \
+  --cert="/etc/kubernetes/pki/etcd-manager-main/etcd-manager-ca.crt" \
+  --key="/etc/kubernetes/pki/etcd-manager-main/etcd-manager-ca.key" check perf
+```
+> Outputs
+```json
+{
+  "level": "warn",
+  "ts": "2022-07-29T08:36:12.575Z",
+  "logger": "etcd-client",
+  "caller": "v3/retry_interceptor.go:62",
+  "msg": "retrying of unary invoker failed",
+  "target": "etcd-endpoints://0xc0003d8a80/localhost:2379",
+  "attempt": 0,
+  "error": "rpc error: code = DeadlineExceeded desc = latest balancer error: last connection error: connection error: desc = \"transport: Error while dialing dial tcp 127.0.0.1:2379: connect: connection refused\""
+}
+Error: context deadline exceeded
+```
+
 # References
 
 - [ ] [etcd - Quickstart](https://etcd.io/docs/v3.5/quickstart/)
