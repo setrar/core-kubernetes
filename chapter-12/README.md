@@ -114,6 +114,37 @@ sudo \
 ```
 Error: context deadline exceeded
 
+
+etcd-command
+
+```
+/bin/sh -c mkfifo /tmp/pipe; (tee -a /var/log/etcd.log < /tmp/pipe & ) ; \
+exec /etcd-manager --backup-store=s3://grappes-kops/grappe-mineure.stp.uof.ca/backups/etcd/main \
+--client-urls=https://__name__:4001 \
+--cluster-name=etcd \
+--containerized=true \
+--dns-suffix=.internal.grappe-mineure.stp.uof.ca \
+--grpc-port=3996 \
+--peer-urls=https://__name__:2380 \
+--quarantine-client-urls=https://__name__:3994 \
+--v=6 \
+--volume-name-tag=k8s.io/etcd/main --volume-provider=aws --volume-tag=k8s.io/etcd/main \
+--volume-tag=k8s.io/role/master=1 --volume-tag=kubernetes.io/cluster/grappe-mineure.stp.uof.ca=owned > /tmp/pipe 2>&1
+```
+
+Mounts
+
+```
+/rootfs
+from rootfs (rw)
+/run
+from run (rw)
+/etc/kubernetes/pki/etcd-manager
+from pki (rw)
+/var/log/etcd.log
+from varlogetcd (rw)
+```
+
 # References
 
 - [ ] [etcd - Quickstart](https://etcd.io/docs/v3.5/quickstart/)
