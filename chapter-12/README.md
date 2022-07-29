@@ -91,8 +91,8 @@ sudo \
   "attempt": 0,
   "error": "rpc error: code = DeadlineExceeded desc = latest balancer error: last connection error: connection error: desc = \"transport: Error while dialing dial tcp 127.0.0.1:2379: connect: connection refused\""
 }
-Error: context deadline exceeded
 ```
+Error: context deadline exceeded
 
 # References
 
