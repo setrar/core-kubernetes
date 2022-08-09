@@ -65,7 +65,10 @@ Hello, etcd
 ```
 
 ```
-kubectl exec --stdin --tty --namespace kube-system etcd-manager-main-ip-172-20-57-162.ca-central-1.compute.internal --container etcd-manager -- sh
+kubectl exec --stdin --tty \
+    --namespace kube-system \
+    etcd-manager-main-ip-172-20-57-162.ca-central-1.compute.internal \
+    --container etcd-manager -- sh
 ```
 
 
