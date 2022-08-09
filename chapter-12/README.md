@@ -64,10 +64,16 @@ greeting
 Hello, etcd
 ```
 
+- [ ] get onto the ETCD pod
+
+```
+CTRL_PLANE_NODE=$(k get nodes | grep control-plane | awk '{print $1}')
+```
+
 ```
 kubectl exec --stdin --tty \
     --namespace kube-system \
-    etcd-manager-main-ip-172-20-57-162.ca-central-1.compute.internal \
+    etcd-manager-main-${CTRL_PLANE_NODE} \
     --container etcd-manager -- sh
 ```
 
